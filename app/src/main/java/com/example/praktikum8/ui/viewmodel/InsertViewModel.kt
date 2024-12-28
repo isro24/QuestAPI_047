@@ -1,4 +1,4 @@
-package com.example.praktikum8.viewmodel
+package com.example.praktikum8.ui.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -50,11 +50,11 @@ fun InsertUiEvent.toMhs(): Mahasiswa = Mahasiswa(
     angkatan=angkatan
 )
 
-fun Mahasiswa.toUiStateMhs():InsertUiState= InsertUiState(
+fun Mahasiswa.toUiStateMhs(): InsertUiState = InsertUiState(
     insertUiEvent = toInsertUiEvent()
 )
 
-fun Mahasiswa.toInsertUiEvent(): InsertUiEvent=InsertUiEvent(
+fun Mahasiswa.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
     nim=nim,
     nama=nama,
     alamat=alamat,

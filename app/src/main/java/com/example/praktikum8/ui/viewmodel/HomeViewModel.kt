@@ -1,4 +1,4 @@
-package com.example.praktikum8.viewmodel
+package com.example.praktikum8.ui.viewmodel
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
