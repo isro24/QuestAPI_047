@@ -9,9 +9,9 @@ interface MahasiswaRepository{
 
     suspend fun getMahasiswa(): List<Mahasiswa>
 
-    suspend fun updateJdwl(nim: String, mahasiswa: Mahasiswa)
+    suspend fun updateMahasiswa(nim: String, mahasiswa: Mahasiswa)
 
-    suspend fun deleteJdwl(nim: String)
+    suspend fun deleteMahasiswa(nim: String)
 
     suspend fun getMahasiswaByNim(nim: String): Mahasiswa
 }
@@ -23,11 +23,11 @@ class NetworkKontakRepository(
         kontakApiService.insertMahasiswa(mahasiswa)
     }
 
-    override suspend fun updateJdwl(nim: String, mahasiswa: Mahasiswa) {
+    override suspend fun updateMahasiswa(nim: String, mahasiswa: Mahasiswa) {
         kontakApiService.updateMahasiswa(nim, mahasiswa)
     }
 
-    override suspend fun deleteJdwl(nim: String) {
+    override suspend fun deleteMahasiswa(nim: String) {
         try {
             val response = kontakApiService.deleteMahasiswa(nim)
             if (!response.isSuccessful){
