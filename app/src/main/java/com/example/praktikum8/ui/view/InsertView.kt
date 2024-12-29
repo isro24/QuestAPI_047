@@ -20,7 +20,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.praktikum8.ui.customwidget.CostumeTopAppBar
+import com.example.praktikum8.ui.customwidget.CustomeTopAppBar
 import com.example.praktikum8.ui.navigation.DestinasiNavigasi
 import com.example.praktikum8.ui.viewmodel.InsertUiEvent
 import com.example.praktikum8.ui.viewmodel.InsertUiState
@@ -44,7 +44,7 @@ fun EntryMhsScreen(
     Scaffold (
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
-            CostumeTopAppBar(
+            CustomeTopAppBar(
                 title  = DestinasiEntry.titleRes,
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior,
