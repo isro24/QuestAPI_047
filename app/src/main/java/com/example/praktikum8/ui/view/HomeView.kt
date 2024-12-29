@@ -46,7 +46,7 @@ import com.example.praktikum8.ui.viewmodel.PenyediaViewModel
 
 object DestinasiHome : DestinasiNavigasi{
     override val route = "home"
-    override val titleRes = "Home Mhs"
+    override val titleRes = "Home Mahasiswa"
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -78,7 +78,7 @@ fun HomeScreen(
                 modifier = Modifier.padding(18.dp)
             )
             {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Kontak" )
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Mahasiswa" )
             }
         },
     ){innerPadding ->
@@ -109,7 +109,7 @@ fun HomeStatus(
         is HomeUiState.Success ->
             if (homeUiState.mahasiswa.isEmpty()){
                 return Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-                    Text(text = "Tidak ada data kontak")
+                    Text(text = "Tidak ada data Mahasiswa")
                 }
             }else {
                 MhsLayout(
