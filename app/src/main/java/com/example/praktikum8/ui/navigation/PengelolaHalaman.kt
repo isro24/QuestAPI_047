@@ -62,5 +62,24 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
                 )
             }
         }
+
+        composable(
+            DestinasiUpdate.routeWithArgs,
+            arguments = listOf(
+                navArgument(DestinasiUpdate.NIM) {
+                    type = NavType.StringType
+                }
+            )
+        ) {
+            UpdateView(
+                NavigateBack = {
+                    navController.popBackStack()
+                },
+                onNavigate = {
+                    navController.popBackStack()
+                },
+                modifier = modifier
+            )
+        }
     }
 }
