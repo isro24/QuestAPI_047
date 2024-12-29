@@ -1,19 +1,27 @@
 package com.example.praktikum8.ui.view
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.praktikum8.ui.customwidget.CostumeTopAppBar
 import com.example.praktikum8.ui.navigation.DestinasiNavigasi
+import com.example.praktikum8.ui.viewmodel.InsertUiEvent
+import com.example.praktikum8.ui.viewmodel.InsertUiState
 import com.example.praktikum8.ui.viewmodel.InsertViewModel
 import kotlinx.coroutines.launch
 
@@ -56,5 +64,31 @@ fun EntryMhsScreen(
                 .verticalScroll(rememberScrollState())
                 .fillMaxWidth()
         )
+    }
+}
+
+@Composable
+fun EntryBody(
+    insertUiState: InsertUiState,
+    onSiswaValueChange: (InsertUiEvent) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+){
+    Column (
+        verticalArrangement = Arrangement.spacedBy(18.dp),
+        modifier = modifier.padding(12.dp)
+    ){
+        FormInput(
+            insertUiEvent = insertUiState.insertUiEvent,
+            onValueChange = onSiswaValueChange,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Button(
+            onClick = onSaveClick,
+            shape = MaterialTheme.shapes.small,
+            modifier = Modifier.fillMaxWidth()
+        ){
+            Text(text = "Simpan")
+        }
     }
 }
