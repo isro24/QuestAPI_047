@@ -43,7 +43,7 @@ import com.example.praktikum8.ui.viewmodel.toMhs
 
 object DestinasiDetail : DestinasiNavigasi {
     override val route = "detail"
-    override val titleRes = "Detail Mahasisswa"
+    override val titleRes = "Detail Mahasiswa"
     const val NIM = "nim"
     val routeWithArgs = "$route/{$NIM}"
 }
@@ -88,11 +88,10 @@ fun DetailView(
             detailUiState = viewModel.detailUiState,
             modifier = Modifier.padding(innerPadding),
             onDeleteClick = {
-                deleteConfirmationRequired = true // Menampilkan dialog konfirmasi
+                deleteConfirmationRequired = true
             }
         )
 
-        // Tampilkan dialog konfirmasi delete jika dibutuhkan
         if (deleteConfirmationRequired) {
             DeleteConfirmationDialog(
                 onDeleteConfirm = {
@@ -122,7 +121,7 @@ fun BodyDetailMhs(
                 modifier = modifier.fillMaxWidth(),
                 contentAlignment = Alignment.Center
             ) {
-                CircularProgressIndicator() // Tampilkan loading
+                CircularProgressIndicator()
             }
         }
         detailUiState.isError -> {
