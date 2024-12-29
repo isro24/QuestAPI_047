@@ -31,10 +31,8 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.modifier.modifierLocalOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -54,7 +52,7 @@ object DestinasiHome : DestinasiNavigasi{
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
-    naviagateToItemEntry: () -> Unit,
+    navigateToItemEntry: () -> Unit,
     modifier: Modifier = Modifier,
     onDetailClick: (String) -> Unit = {},
     viewModel: HomeViewModel = viewModel(factory = PenyediaViewModel.Factory)
@@ -75,7 +73,7 @@ fun HomeScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = naviagateToItemEntry,
+                onClick = navigateToItemEntry,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(18.dp)
             )
@@ -170,7 +168,7 @@ fun MhsLayout(
         items(mahasiswa) { kontak ->
             MhsCard(
                 mahasiswa = kontak,
-                modifier = modifier
+                modifier = Modifier
                     .fillMaxWidth()
                     .clickable { onDetailClick(kontak) },
                 onDeleteClick = {
@@ -192,8 +190,8 @@ fun MhsCard(
         shape = MaterialTheme.shapes.medium,
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
     ){
-        Column (
-            modifier = modifier.padding(16.dp),
+        Column(
+            modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ){
             Row(
@@ -204,7 +202,7 @@ fun MhsCard(
                     mahasiswa.nama,
                     style = MaterialTheme.typography.titleLarge,
                     )
-                Spacer(modifier.weight(1f))
+                Spacer(Modifier.weight(1f))
                 IconButton(onClick = { onDeleteClick(mahasiswa) }) {
                     Icon(
                         imageVector = Icons.Default.Delete,
@@ -215,16 +213,15 @@ fun MhsCard(
                     text = mahasiswa.nim,
                     style = MaterialTheme.typography.titleMedium
                 )
-                Text(
-                    text = mahasiswa.kelas,
-                    style = MaterialTheme.typography.titleMedium
-                )
-                Text(
-                    text = mahasiswa.alamat,
-                    style = MaterialTheme.typography.titleMedium
-                )
-
             }
+            Text(
+                text = mahasiswa.kelas,
+                style = MaterialTheme.typography.titleMedium
+            )
+            Text(
+                text = mahasiswa.alamat,
+                style = MaterialTheme.typography.titleMedium
+            )
         }
     }
 }
