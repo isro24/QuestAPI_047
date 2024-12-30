@@ -25,5 +25,16 @@
 ** Tampilan Delete Data (Home Mahasiswa) **
 ![Tampilan Delete Data (Home Mahasiswa)](https://github.com/user-attachments/assets/a00de7cb-34c6-49d0-91f7-6bf2c32bb9ff)
 
-** Tampilan Home (Setelah Delete)**
+** Tampilan Home (Setelah Delete) **
 ![Tampilan Home Mahasiswa (Setelah Delete)](https://github.com/user-attachments/assets/25ef9290-e9db-48fd-b396-016ceb7587e0)
+
+** Tampilan Edit Mahasiswa **
+![Tampilan Edit Mahasiswa](https://github.com/user-attachments/assets/ae07f23e-4a4b-4262-a50c-7f339278e875)
+
+** Tampilan Edit Mahasiswa (Ketika Edit) **
+![Tampilan Edit Mahasiswa (Ketika Edit)](https://github.com/user-attachments/assets/8776ba6a-6284-411d-a16c-81a97f89f2ac)
+
+** Tampilan Detail Mahasiswa (Setelah Edit) **
+![Tampilan Detail Mahasiswa (Setelah Edit)](https://github.com/user-attachments/assets/ff7ea3dc-7d6e-4927-b9a9-abd3fce5a7fd)
+
+
