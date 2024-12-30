@@ -11,9 +11,11 @@ import androidx.navigation.navArgument
 import com.example.praktikum8.ui.view.DestinasiDetail
 import com.example.praktikum8.ui.view.DestinasiEntry
 import com.example.praktikum8.ui.view.DestinasiHome
+import com.example.praktikum8.ui.view.DestinasiUpdate
 import com.example.praktikum8.ui.view.DetailView
 import com.example.praktikum8.ui.view.EntryMhsScreen
 import com.example.praktikum8.ui.view.HomeScreen
+import com.example.praktikum8.ui.view.UpdateView
 
 @Composable
 fun PengelolaHalaman(navController: NavHostController = rememberNavController()){
@@ -55,7 +57,7 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
                             }
                         }
                     },
-                    onEditClick =  {},
+                    onEditClick =  {navController.navigate("${DestinasiUpdate.route}/$it")},
                     onDeleteClick = {
                         navController.popBackStack()
                     }
@@ -78,7 +80,6 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
                 onNavigate = {
                     navController.popBackStack()
                 },
-                modifier = modifier
             )
         }
     }
