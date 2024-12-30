@@ -26,7 +26,7 @@ interface MahasiswaService {
     @GET("baca1mahasiswa.php/{nim}")
     suspend fun getMahasiswaByNim(@Query("nim") nim:String): Mahasiswa
 
-    @PUT("updatemahasiswa.php/{nim}")
+    @PUT("editmahasiswa.php/{nim}")
     suspend fun updateMahasiswa(@Query("nim") nim:String, @Body mahasiswa: Mahasiswa)
 
     @DELETE("deletemahasiswa.php/{nim}")
